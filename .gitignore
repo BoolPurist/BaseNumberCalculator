@@ -1,9 +1,10 @@
 # IDE Data
+.vscode/
 .vs/
 
 # build resources
-[Bb]uild
-[Oo]bj
+[Bb]in/
+[Oo]bj/
 
 # Log files
 *.log
