@@ -1,9 +1,0 @@
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibrary\bin\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.deps.json
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibrary\bin\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.dll
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibrary\bin\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.pdb
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibrary\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.csprojAssemblyReference.cache
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibrary\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.AssemblyInfoInputs.cache
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibrary\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.AssemblyInfo.cs
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibrary\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.csproj.CoreCompileInputs.cache
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibrary\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.dll
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibrary\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.pdb

@@ -1,0 +1,9 @@
+# IDE Data
+.vs/
+
+# build resources
+[Bb]uild
+[Oo]bj
+
+# Log files
+*.log
