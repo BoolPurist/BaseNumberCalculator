@@ -4,45 +4,20 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using Xunit;
 using NumberBaseConvertionLibrary;
+using System.Xml.Serialization;
 
 namespace NumberBaseConvertionLibraryUnitTest
 {
 
     public class NumberBaseConvertingTest
     {
-        [Theory]
-        [InlineData("A4", 16, true)]
-        [InlineData("A4", 9, false)]
-        [InlineData("A4", 10, false)]
-        [InlineData("E", 15, true)]
-        [InlineData("E", 12, false)]
-        [InlineData("5", 3, false)]
-        [InlineData("5", 6, true)]
-        public static void IsValidNumberWithBase_ShouldTellIfNumberIsValidWithGivenBase(string textNumber, int sourceBase, bool expected)
-            => Assert.Equal(expected, NumberBaseConverting.IsValidNumberWithBase(textNumber, sourceBase));
-
-        [Fact]
-        public static void IsValidNumberWithBase_ShouldThrowWhenTextNumberIsNull() => Assert.Throws<ArgumentNullException>("textNumber", () => NumberBaseConverting.IsValidNumberWithBase(null, 2));
-
-        [Theory]
-        [InlineData("/*", 1)]
-        [InlineData("2-5", 6)]
-        [InlineData("\n", 6)]
-        public static void IsValidNumberWithBase_ShouldThrowWhenTextNumberHasInvalidSymbol(string unvalidTextNumber, int validBase)
-            => Assert.Throws<ArgumentException>("textNumber", () => NumberBaseConverting.IsValidNumberWithBase(unvalidTextNumber, validBase));
 
 
         [Theory]
-        [MemberData(nameof(TestData.TestNegativeOrZeroBases), MemberType = typeof(TestData))]
-        [MemberData(nameof(TestData.TestTooBigPositiveValue), MemberType = typeof(TestData))]
-        public static void IsValidNumberWithBase_ShouldThrowWhenBaseIsOutOfValidRange(int invalidBase)
-            => Assert.Throws<ArgumentOutOfRangeException>("sourceBase", () => NumberBaseConverting.IsValidNumberWithBase("1", invalidBase));
-
-
-        [Fact]
-        public static void IsValidNumberWithBase_ShouldThrowTextNumberIsEmpty() => Assert.Throws<ArgumentException>("textNumber", () => NumberBaseConverting.IsValidNumberWithBase("", 2));
-
-        [Theory]
+        [InlineData("A4", 9, -1)]
+        [InlineData("A4", 10, -1)]
+        [InlineData("E", 12, -1)]
+        [InlineData("5", 3, -1)]
         [InlineData("1", 2, 1)]
         [InlineData("0", 2, 0)]
         [InlineData("8", 10, 8)]
@@ -62,6 +37,28 @@ namespace NumberBaseConvertionLibraryUnitTest
             => Assert.Equal(expected, NumberBaseConverting.NumberValueFromTextNumber(textNumber, sourceBase));
 
         [Theory]
+        [InlineData("/*", 1)]
+        [InlineData("2-5", 6)]
+        [InlineData("\n", 6)]
+        public static void NumberValueFromTextNumber_ShouldThrowWhenTextNumberHasInvalidSymbol(string unvalidTextNumber, int validBase)
+            => Assert.Throws<ArgumentException>("textNumber", () => NumberBaseConverting.NumberValueFromTextNumber(unvalidTextNumber, validBase));
+
+        [Theory]
+        [MemberData(nameof(TestData.TestNegativeOrZeroBases), MemberType = typeof(TestData))]
+        [MemberData(nameof(TestData.TestTooBigPositiveValue), MemberType = typeof(TestData))]
+        public static void NumberValueFromTextNumber_ShouldThrowWhenBaseIsOutOfValidRange(int invalidBase)
+            => Assert.Throws<ArgumentOutOfRangeException>("sourceBase", () => NumberBaseConverting.NumberValueFromTextNumber("1", invalidBase));
+
+        [Fact]
+        public static void NumberValueFromTextNumber_ShouldThrowWhenTextNumberIsNull() 
+            => Assert.Throws<ArgumentNullException>("textNumber", () => NumberBaseConverting.NumberValueFromTextNumber(null, 2));
+
+        [Fact]
+        public static void NumberValueFromTextNumber_ShouldThrowTextNumberIsEmpty() 
+            => Assert.Throws<ArgumentException>("textNumber", () => NumberBaseConverting.NumberValueFromTextNumber("", 2));
+
+
+        [Theory]
         [InlineData(20, 2, "10100")]
         [InlineData(0, 10, "0")]
         [InlineData(10, 10, "10")]
@@ -74,14 +71,12 @@ namespace NumberBaseConvertionLibraryUnitTest
         [InlineData(37, 36, "11")]
         public static void TextNumberFromNumberValue_ShouldConvertNumericValueToTextNumber(int numericValue, int targetBase, string expected)
             => Assert.Equal(expected, NumberBaseConverting.TextNumberFromNumberValue(numericValue, targetBase));
-
-
+        
         [Theory]
         [MemberData(nameof(TestData.TestNegativeOrZeroBases), MemberType = typeof(TestData))]
         [MemberData(nameof(TestData.TestTooBigPositiveValue), MemberType = typeof(TestData))]
         public static void TextNumberFromNumberValue_ShouldThrowWhenTargetBaseOutOfValidRange(int invalidBase) => Assert.Throws<ArgumentOutOfRangeException>(() => NumberBaseConverting.TextNumberFromNumberValue(1, invalidBase));
-
-
+        
         private class TestData
         {
             public static IEnumerable<object[]> TestNegativeOrZeroBases => 

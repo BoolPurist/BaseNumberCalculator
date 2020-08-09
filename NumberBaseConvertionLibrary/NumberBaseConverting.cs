@@ -8,12 +8,10 @@ namespace NumberBaseConvertionLibrary
     public static class NumberBaseConverting
     {
         private static readonly int maxBase = 36;
-
+  
         public static int MaxBase => maxBase;
-
         
-
-        public static bool IsValidNumberWithBase(string textNumber, int sourceBase)
+        private static bool IsValidTextNumberWithBase(string textNumber, int sourceBase)
         {
             if (textNumber == null)
             {
@@ -80,7 +78,7 @@ namespace NumberBaseConvertionLibrary
         public static int NumberValueFromTextNumber(string textNumber, int sourceBase)
         {
 
-            if (IsValidNumberWithBase(textNumber, sourceBase) == false)
+            if (NumberBaseConverting.IsValidTextNumberWithBase(textNumber, sourceBase) == false)
             {
                 return -1;
             }
