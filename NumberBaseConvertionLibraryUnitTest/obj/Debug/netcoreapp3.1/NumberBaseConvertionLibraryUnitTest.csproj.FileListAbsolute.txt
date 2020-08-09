@@ -86,8 +86,6 @@ C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUn
 C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\bin\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.dll
-C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\bin\Debug\netcoreapp3.1\NumberBaseConvertionLibrary.pdb
 C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibraryUnitTest.csprojAssemblyReference.cache
 C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibraryUnitTest.AssemblyInfoInputs.cache
 C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibraryUnitTest.AssemblyInfo.cs
@@ -96,3 +94,5 @@ C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUn
 C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibraryUnitTest.dll
 C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibraryUnitTest.pdb
 C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\obj\Debug\netcoreapp3.1\NumberBaseConvertionLibraryUnitTest.genruntimeconfig.cache
+C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\bin\Debug\netcoreapp3.1\NumberBaseConversionLibrary.dll
+C:\Users\Naumann\source\repos\BaseNumberCalculator\NumberBaseConvertionLibraryUnitTest\bin\Debug\netcoreapp3.1\NumberBaseConversionLibrary.pdb

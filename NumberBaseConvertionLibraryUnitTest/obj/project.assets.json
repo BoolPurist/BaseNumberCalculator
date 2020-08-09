@@ -902,14 +902,14 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "NumberBaseConvertionLibrary/1.0.0": {
+      "NumberBaseConversionLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
-          "bin/placeholder/NumberBaseConvertionLibrary.dll": {}
+          "bin/placeholder/NumberBaseConversionLibrary.dll": {}
         },
         "runtime": {
-          "bin/placeholder/NumberBaseConvertionLibrary.dll": {}
+          "bin/placeholder/NumberBaseConversionLibrary.dll": {}
         }
       }
     }
@@ -3484,16 +3484,16 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "NumberBaseConvertionLibrary/1.0.0": {
+    "NumberBaseConversionLibrary/1.0.0": {
       "type": "project",
-      "path": "../NumberBaseConvertionLibrary/NumberBaseConvertionLibrary.csproj",
-      "msbuildProject": "../NumberBaseConvertionLibrary/NumberBaseConvertionLibrary.csproj"
+      "path": "../NumberBaseConversionLibrary/NumberBaseConversionLibrary.csproj",
+      "msbuildProject": "../NumberBaseConversionLibrary/NumberBaseConversionLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.NET.Test.Sdk >= 16.5.0",
-      "NumberBaseConvertionLibrary >= 1.0.0",
+      "NumberBaseConversionLibrary >= 1.0.0",
       "coverlet.collector >= 1.2.0",
       "xunit >= 2.4.0",
       "xunit.runner.visualstudio >= 2.4.0"
@@ -3525,8 +3525,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Naumann\\source\\repos\\BaseNumberCalculator\\NumberBaseConvertionLibrary\\NumberBaseConvertionLibrary.csproj": {
-              "projectPath": "C:\\Users\\Naumann\\source\\repos\\BaseNumberCalculator\\NumberBaseConvertionLibrary\\NumberBaseConvertionLibrary.csproj"
+            "C:\\Users\\Naumann\\source\\repos\\BaseNumberCalculator\\NumberBaseConversionLibrary\\NumberBaseConversionLibrary.csproj": {
+              "projectPath": "C:\\Users\\Naumann\\source\\repos\\BaseNumberCalculator\\NumberBaseConversionLibrary\\NumberBaseConversionLibrary.csproj"
             }
           }
         }

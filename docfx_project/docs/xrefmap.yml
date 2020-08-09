@@ -1,0 +1,54 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: NumberBaseConversionLibrary
+  name: NumberBaseConversionLibrary
+  href: api/NumberBaseConversionLibrary.html
+  commentId: N:NumberBaseConversionLibrary
+  fullName: NumberBaseConversionLibrary
+  nameWithType: NumberBaseConversionLibrary
+- uid: NumberBaseConversionLibrary.NumberBaseConverting
+  name: NumberBaseConverting
+  href: api/NumberBaseConversionLibrary.NumberBaseConverting.html
+  commentId: T:NumberBaseConversionLibrary.NumberBaseConverting
+  fullName: NumberBaseConversionLibrary.NumberBaseConverting
+  nameWithType: NumberBaseConverting
+- uid: NumberBaseConversionLibrary.NumberBaseConverting.MaxBase
+  name: MaxBase
+  href: api/NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_MaxBase
+  commentId: P:NumberBaseConversionLibrary.NumberBaseConverting.MaxBase
+  fullName: NumberBaseConversionLibrary.NumberBaseConverting.MaxBase
+  nameWithType: NumberBaseConverting.MaxBase
+- uid: NumberBaseConversionLibrary.NumberBaseConverting.MaxBase*
+  name: MaxBase
+  href: api/NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_MaxBase_
+  commentId: Overload:NumberBaseConversionLibrary.NumberBaseConverting.MaxBase
+  isSpec: "True"
+  fullName: NumberBaseConversionLibrary.NumberBaseConverting.MaxBase
+  nameWithType: NumberBaseConverting.MaxBase
+- uid: NumberBaseConversionLibrary.NumberBaseConverting.NumberValueFromTextNumber(System.String,System.Int32)
+  name: NumberValueFromTextNumber(String, Int32)
+  href: api/NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_NumberValueFromTextNumber_System_String_System_Int32_
+  commentId: M:NumberBaseConversionLibrary.NumberBaseConverting.NumberValueFromTextNumber(System.String,System.Int32)
+  fullName: NumberBaseConversionLibrary.NumberBaseConverting.NumberValueFromTextNumber(System.String, System.Int32)
+  nameWithType: NumberBaseConverting.NumberValueFromTextNumber(String, Int32)
+- uid: NumberBaseConversionLibrary.NumberBaseConverting.NumberValueFromTextNumber*
+  name: NumberValueFromTextNumber
+  href: api/NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_NumberValueFromTextNumber_
+  commentId: Overload:NumberBaseConversionLibrary.NumberBaseConverting.NumberValueFromTextNumber
+  isSpec: "True"
+  fullName: NumberBaseConversionLibrary.NumberBaseConverting.NumberValueFromTextNumber
+  nameWithType: NumberBaseConverting.NumberValueFromTextNumber
+- uid: NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue(System.Int32,System.Int32)
+  name: TextNumberFromNumberValue(Int32, Int32)
+  href: api/NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_TextNumberFromNumberValue_System_Int32_System_Int32_
+  commentId: M:NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue(System.Int32,System.Int32)
+  fullName: NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue(System.Int32, System.Int32)
+  nameWithType: NumberBaseConverting.TextNumberFromNumberValue(Int32, Int32)
+- uid: NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue*
+  name: TextNumberFromNumberValue
+  href: api/NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_TextNumberFromNumberValue_
+  commentId: Overload:NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue
+  isSpec: "True"
+  fullName: NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue
+  nameWithType: NumberBaseConverting.TextNumberFromNumberValue

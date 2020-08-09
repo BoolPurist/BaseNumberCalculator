@@ -4,7 +4,6 @@ C:\Users\Naumann\source\repos\BaseNumberCalculator\GUINumberBaseCalculator\bin\D
 C:\Users\Naumann\source\repos\BaseNumberCalculator\GUINumberBaseCalculator\bin\Debug\netcoreapp3.1\GUINumberBaseCalculator.runtimeconfig.dev.json
 C:\Users\Naumann\source\repos\BaseNumberCalculator\GUINumberBaseCalculator\bin\Debug\netcoreapp3.1\GUINumberBaseCalculator.dll
 C:\Users\Naumann\source\repos\BaseNumberCalculator\GUINumberBaseCalculator\bin\Debug\netcoreapp3.1\GUINumberBaseCalculator.pdb
-C:\Users\Naumann\source\repos\BaseNumberCalculator\GUINumberBaseCalculator\obj\Debug\netcoreapp3.1\GUINumberBaseCalculator.csprojAssemblyReference.cache
 C:\Users\Naumann\source\repos\BaseNumberCalculator\GUINumberBaseCalculator\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\Naumann\source\repos\BaseNumberCalculator\GUINumberBaseCalculator\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Naumann\source\repos\BaseNumberCalculator\GUINumberBaseCalculator\obj\Debug\netcoreapp3.1\GUINumberBaseCalculator_MarkupCompile.cache

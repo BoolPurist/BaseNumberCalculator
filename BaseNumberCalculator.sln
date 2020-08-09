@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUINumberBaseCalculator", "GUINumberBaseCalculator\GUINumberBaseCalculator.csproj", "{26A1DF34-6F12-4675-B0D7-1F9D22F7E415}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUINumberBaseCalculator", "GUINumberBaseCalculator\GUINumberBaseCalculator.csproj", "{26A1DF34-6F12-4675-B0D7-1F9D22F7E415}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberBaseConvertionLibrary", "NumberBaseConvertionLibrary\NumberBaseConvertionLibrary.csproj", "{D7C80EF7-DED8-44C3-AD87-876854112D9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberBaseConvertionLibraryUnitTest", "NumberBaseConvertionLibraryUnitTest\NumberBaseConvertionLibraryUnitTest.csproj", "{C537651D-E3A1-4758-95E8-893B675D6FAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberBaseConvertionLibraryUnitTest", "NumberBaseConvertionLibraryUnitTest\NumberBaseConvertionLibraryUnitTest.csproj", "{C537651D-E3A1-4758-95E8-893B675D6FAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberBaseConversionLibrary", "NumberBaseConversionLibrary\NumberBaseConversionLibrary.csproj", "{514F0089-13F2-4A8E-B1C7-2A0879C7D49F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{26A1DF34-6F12-4675-B0D7-1F9D22F7E415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26A1DF34-6F12-4675-B0D7-1F9D22F7E415}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26A1DF34-6F12-4675-B0D7-1F9D22F7E415}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7C80EF7-DED8-44C3-AD87-876854112D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7C80EF7-DED8-44C3-AD87-876854112D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7C80EF7-DED8-44C3-AD87-876854112D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7C80EF7-DED8-44C3-AD87-876854112D9A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C537651D-E3A1-4758-95E8-893B675D6FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C537651D-E3A1-4758-95E8-893B675D6FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C537651D-E3A1-4758-95E8-893B675D6FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C537651D-E3A1-4758-95E8-893B675D6FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{514F0089-13F2-4A8E-B1C7-2A0879C7D49F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514F0089-13F2-4A8E-B1C7-2A0879C7D49F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514F0089-13F2-4A8E-B1C7-2A0879C7D49F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514F0089-13F2-4A8E-B1C7-2A0879C7D49F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

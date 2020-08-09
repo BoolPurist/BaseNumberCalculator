@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Xunit;
-using NumberBaseConvertionLibrary;
+using NumberBaseConversionLibrary;
 using System.Xml.Serialization;
 
 namespace NumberBaseConvertionLibraryUnitTest
@@ -32,10 +32,9 @@ namespace NumberBaseConvertionLibraryUnitTest
         [InlineData("0000", 1, 3)]
         [InlineData("0", 1, 0)]
         [InlineData("Z", 36, 35)]
-
         public static void NumberValueFromTextNumber_ShouldConvertTextNumberToNumericValueRight(string textNumber, int sourceBase, int expected)
             => Assert.Equal(expected, NumberBaseConverting.NumberValueFromTextNumber(textNumber, sourceBase));
-
+        
         [Theory]
         [InlineData("/*", 1)]
         [InlineData("2-5", 6)]

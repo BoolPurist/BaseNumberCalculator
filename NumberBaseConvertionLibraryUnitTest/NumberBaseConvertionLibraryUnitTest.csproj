@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NumberBaseConvertionLibrary\NumberBaseConvertionLibrary.csproj" />
+    <ProjectReference Include="..\NumberBaseConversionLibrary\NumberBaseConversionLibrary.csproj" />
   </ItemGroup>
 
 </Project>
