@@ -6,17 +6,17 @@ using System.Threading;
 namespace NumberBaseConversionLibrary
 {
     /// <summary>
-    /// Class provides a way of converting a string as a number with certain base into either a integer or 
+    /// Class provides a way of converting a text number with a certain base into either a integer or 
     /// a string as a number with a different base.
     /// </summary>
     /// <example>
-    /// Converting number "A4" with base 16 into the number "10010100" with base "2".
+    /// Converting text number "A4" with base 16 into the number "10010100" with base "2".
     /// That example shows how to do it.
     /// <code>
     /// string sourceNumber = "A4";
-    /// int sourceInteger = NumberBaseConverting.NumberValueFromTextNumber(sourceNumber, 16) 
+    /// int sourceInteger = NumberBaseConverting.NumberValueFromTextNumber(sourceNumber, 16);
     /// // sourceInteger = 164, with the method <see cref = "NumberBaseConverting.NumberValueFromTextNumber" />
-    /// string targetNumber = NumberBaseConverting.TextNumberFromNumberValue(sourceInteger, 2 )
+    /// string targetNumber = NumberBaseConverting.TextNumberFromNumberValue(sourceInteger, 2 );
     /// // tragetNumber = "10010100", with the method <see cref = "NumberBaseConverting.TextNumberFromNumberValue" />
     /// // targetNumber is the result.
     /// </code>
@@ -24,25 +24,25 @@ namespace NumberBaseConversionLibrary
     public static class NumberBaseConverting
     {
         private static readonly int maxBase = 36;
-        /// <summary> Determines the highest base for conversion numbers </summary>
+        /// <summary> Determines the possible highest base for conversion numbers </summary>
         /// <value> Get-Accessors on the readonly field maxBase with the value 36 currently</value>
         public static int MaxBase => maxBase;
         /// <summary> Gets the numeric value from a number as text. </summary>
-        /// <param name="textNumber"> Number as a text is made of chars from 0-9,a-z and A-Z. </param>
-        /// <param name="sourceBase"> Integer for the base the text number is based on. </param>
+        /// <param name="textNumber"> text number which is converted to a numeric value</param>
+        /// <param name="sourceBase"> Base which the text number is based on. </param>
         /// <returns> 
-        /// Numeric value as integer based on the decimal number system.
+        /// Numeric value that comes from the conversion out of the text number <paramref name = "textNumber" />.
         /// Returns -1 if the text number has at least one char with values above the <paramref name = "sourceBase" />.
         /// Example: With "A4" for <paramref name = "textNumber" /> and 10 for <paramref name = "sourceBase" /> returns -1,
-        /// because A exits in number systems with a base of at least 11.
+        /// because 'A' only exit in a number systems with a base of above 10.
         /// </returns>
         /// <exception cref="System.ArgumentNullException">  Occurs if parameter <paramref name = "textNumber" /> is null </exception>
         /// <exception cref="System.ArgumentOutOfRangeException">
         /// Occurs if parameter <paramref name = "sourceBase" /> is zero or smaller.
-        /// Occurs if the parameter is greater that the value of <see cref = "NumberBaseConverting.MaxBase" />.
+        /// Occurs if the parameter is greater than the value of <see cref = "NumberBaseConverting.MaxBase" />.
         /// </exception>
         /// <exception cref="System.ArgumentException">
-        /// Occurs if the <paramref name = "textNumber" /> is an empty string or has a char with is not 0-9, a-z or A-Z.
+        /// Occurs if the <paramref name = "textNumber" /> is an empty string or has no char which is from 0-9, a-z or A-Z.
         /// </exception>
         public static int NumberValueFromTextNumber(string textNumber, int sourceBase)
         {
@@ -148,16 +148,16 @@ namespace NumberBaseConversionLibrary
             return true;
         }
                 
-        /// <summary> Converts an integer into string that represents a number with <paramref name = "targetBase" /> as a base. </summary>
-        /// <param name="targetBase"> Base that the target number should come from. </param>
+        /// <summary> Converts an numeric value into a text number <paramref name = "targetBase" /> </summary>
+        /// <param name="targetBase"> The base for the new text number </param>
         /// <param name="numericValue"> 
-        /// Integer value for a number with the base 10. 
-        /// This integer is converted to a string number with <paramref name = "targetBase" /> as a base. 
+        /// numeric value as base for the text number. 
+        /// It is converted to a text number with <paramref name = "targetBase" /> as a base. 
         /// </param>
-        /// <returns> number as string that is based on <paramref name = "targetBase" /> as a base </returns>
+        /// <returns> text number which hat the base <paramref name = "targetBase" /> </returns>
         /// <exception cref="System.ArgumentOutOfRangeException"> 
-        /// Occurs if <paramref name = "targetBase" /> is or smaller than zero.
-        /// Occurs if the parameter is bigger than maximum base, <see cref = "MaxBase" />.
+        /// Occurs if <paramref name = "targetBase" /> is equal to or smaller than zero.
+        /// Occurs if the parameter is bigger than the maximum base, <see cref = "MaxBase" />.
         /// </exception>
         public static string TextNumberFromNumberValue(int numericValue, int targetBase)
         {

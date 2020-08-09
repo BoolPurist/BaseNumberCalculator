@@ -73,7 +73,7 @@
   
   <h1 id="NumberBaseConversionLibrary_NumberBaseConverting" data-uid="NumberBaseConversionLibrary.NumberBaseConverting" class="text-break">Class NumberBaseConverting
   </h1>
-  <div class="markdown level0 summary"><p>Class provides a way of converting a string as a number with certain base into either a integer or
+  <div class="markdown level0 summary"><p>Class provides a way of converting a text number with a certain base into either a integer or
 a string as a number with a different base.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -113,12 +113,12 @@ a string as a number with a different base.</p>
     <pre><code class="lang-csharp hljs">public static class NumberBaseConverting</code></pre>
   </div>
   <h5 id="NumberBaseConversionLibrary_NumberBaseConverting_examples"><strong>Examples</strong></h5>
-  <p>Converting number &quot;A4&quot; with base 16 into the number &quot;10010100&quot; with base &quot;2&quot;.
+  <p>Converting text number &quot;A4&quot; with base 16 into the number &quot;10010100&quot; with base &quot;2&quot;.
 That example shows how to do it.</p>
 <pre><code>string sourceNumber = &quot;A4&quot;;
-int sourceInteger = NumberBaseConverting.NumberValueFromTextNumber(sourceNumber, 16) 
+int sourceInteger = NumberBaseConverting.NumberValueFromTextNumber(sourceNumber, 16);
 // sourceInteger = 164, with the method <a class="xref" href="NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_NumberValueFromTextNumber_System_String_System_Int32_">NumberValueFromTextNumber(String, Int32)</a>
-string targetNumber = NumberBaseConverting.TextNumberFromNumberValue(sourceInteger, 2 )
+string targetNumber = NumberBaseConverting.TextNumberFromNumberValue(sourceInteger, 2 );
 // tragetNumber = &quot;10010100&quot;, with the method <a class="xref" href="NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_TextNumberFromNumberValue_System_Int32_System_Int32_">TextNumberFromNumberValue(Int32, Int32)</a>
 // targetNumber is the result.</code></pre>
 
@@ -133,7 +133,7 @@ string targetNumber = NumberBaseConverting.TextNumberFromNumberValue(sourceInteg
   </span>
   <a id="NumberBaseConversionLibrary_NumberBaseConverting_MaxBase_" data-uid="NumberBaseConversionLibrary.NumberBaseConverting.MaxBase*"></a>
   <h4 id="NumberBaseConversionLibrary_NumberBaseConverting_MaxBase" data-uid="NumberBaseConversionLibrary.NumberBaseConverting.MaxBase">MaxBase</h4>
-  <div class="markdown level1 summary"><p>Determines the highest base for conversion numbers</p>
+  <div class="markdown level1 summary"><p>Determines the possible highest base for conversion numbers</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -187,13 +187,13 @@ string targetNumber = NumberBaseConverting.TextNumberFromNumberValue(sourceInteg
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">textNumber</span></td>
-        <td><p>Number as a text is made of chars from 0-9,a-z and A-Z.</p>
+        <td><p>text number which is converted to a numeric value</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">sourceBase</span></td>
-        <td><p>Integer for the base the text number is based on.</p>
+        <td><p>Base which the text number is based on.</p>
 </td>
       </tr>
     </tbody>
@@ -209,10 +209,10 @@ string targetNumber = NumberBaseConverting.TextNumberFromNumberValue(sourceInteg
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>Numeric value as integer based on the decimal number system.
+        <td><p>Numeric value that comes from the conversion out of the text number <code data-dev-comment-type="paramref" class="paramref">textNumber</code>.
 Returns -1 if the text number has at least one char with values above the <code data-dev-comment-type="paramref" class="paramref">sourceBase</code>.
 Example: With &quot;A4&quot; for <code data-dev-comment-type="paramref" class="paramref">textNumber</code> and 10 for <code data-dev-comment-type="paramref" class="paramref">sourceBase</code> returns -1,
-because A exits in number systems with a base of at least 11.</p>
+because 'A' only exit in a number systems with a base of above 10.</p>
 </td>
       </tr>
     </tbody>
@@ -234,12 +234,12 @@ because A exits in number systems with a base of at least 11.</p>
       <tr>
         <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
         <td><p>Occurs if parameter <code data-dev-comment-type="paramref" class="paramref">sourceBase</code> is zero or smaller.
-Occurs if the parameter is greater that the value of <a class="xref" href="NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_MaxBase">MaxBase</a>.</p>
+Occurs if the parameter is greater than the value of <a class="xref" href="NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_MaxBase">MaxBase</a>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Occurs if the <code data-dev-comment-type="paramref" class="paramref">textNumber</code> is an empty string or has a char with is not 0-9, a-z or A-Z.</p>
+        <td><p>Occurs if the <code data-dev-comment-type="paramref" class="paramref">textNumber</code> is an empty string or has no char which is from 0-9, a-z or A-Z.</p>
 </td>
       </tr>
     </tbody>
@@ -253,7 +253,7 @@ Occurs if the parameter is greater that the value of <a class="xref" href="Numbe
   </span>
   <a id="NumberBaseConversionLibrary_NumberBaseConverting_TextNumberFromNumberValue_" data-uid="NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue*"></a>
   <h4 id="NumberBaseConversionLibrary_NumberBaseConverting_TextNumberFromNumberValue_System_Int32_System_Int32_" data-uid="NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue(System.Int32,System.Int32)">TextNumberFromNumberValue(Int32, Int32)</h4>
-  <div class="markdown level1 summary"><p>Converts an integer into string that represents a number with <code data-dev-comment-type="paramref" class="paramref">targetBase</code> as a base.</p>
+  <div class="markdown level1 summary"><p>Converts an numeric value into a text number <code data-dev-comment-type="paramref" class="paramref">targetBase</code></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -273,14 +273,14 @@ Occurs if the parameter is greater that the value of <a class="xref" href="Numbe
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">numericValue</span></td>
-        <td><p>Integer value for a number with the base 10.
-This integer is converted to a string number with <code data-dev-comment-type="paramref" class="paramref">targetBase</code> as a base.</p>
+        <td><p>numeric value as base for the text number.
+It is converted to a text number with <code data-dev-comment-type="paramref" class="paramref">targetBase</code> as a base.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">targetBase</span></td>
-        <td><p>Base that the target number should come from.</p>
+        <td><p>The base for the new text number</p>
 </td>
       </tr>
     </tbody>
@@ -296,7 +296,7 @@ This integer is converted to a string number with <code data-dev-comment-type="p
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>number as string that is based on <code data-dev-comment-type="paramref" class="paramref">targetBase</code> as a base</p>
+        <td><p>text number which hat the base <code data-dev-comment-type="paramref" class="paramref">targetBase</code></p>
 </td>
       </tr>
     </tbody>
@@ -312,8 +312,8 @@ This integer is converted to a string number with <code data-dev-comment-type="p
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
-        <td><p>Occurs if <code data-dev-comment-type="paramref" class="paramref">targetBase</code> is or smaller than zero.
-Occurs if the parameter is bigger than maximum base, <a class="xref" href="NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_MaxBase">MaxBase</a>.</p>
+        <td><p>Occurs if <code data-dev-comment-type="paramref" class="paramref">targetBase</code> is equal to or smaller than zero.
+Occurs if the parameter is bigger than the maximum base, <a class="xref" href="NumberBaseConversionLibrary.NumberBaseConverting.html#NumberBaseConversionLibrary_NumberBaseConverting_MaxBase">MaxBase</a>.</p>
 </td>
       </tr>
     </tbody>
