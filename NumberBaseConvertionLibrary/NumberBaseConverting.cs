@@ -8,9 +8,15 @@ namespace NumberBaseConvertionLibrary
     public static class NumberBaseConverting
     {
         private static readonly int maxBase = 36;
-  
+
+        /// <summary>
+        /// Determines the highest base for conversion numbers
+        /// </summary>
+        /// <value>
+        /// Get-Accessors on the readonly field maxBase with the value 36 currently,
+        /// </value>
         public static int MaxBase => maxBase;
-        
+
         private static bool IsValidTextNumberWithBase(string textNumber, int sourceBase)
         {
             if (textNumber == null)
@@ -27,7 +33,7 @@ namespace NumberBaseConvertionLibrary
                 string paramName = nameof(textNumber);
                 throw new ArgumentException($"{paramName} must not be empty", paramName);
             }
-            
+
 
             foreach (char symbol in textNumber)
             {
@@ -69,12 +75,19 @@ namespace NumberBaseConvertionLibrary
                     string paramName = nameof(textNumber);
                     throw new ArgumentException($"{paramName} has a not valid symbol", paramName);
                 }
-                
+
             }
 
             return true;
         }
 
+        /// <summary> Gets the numeric value from a number as text. </summary>
+        /// <param name="textNumber"> Number as a text is made of chars from 0-9,a-z and A-Z. </param>
+        /// <param name="sourceBase"> Integer for the base the text number is based on. </param>
+        /// <returns> Numeric value as integer based on the decimal number system. </returns>
+        /// <exception cref="System.ArgumentNullException">
+        /// TODO
+        /// </exception>
         public static int NumberValueFromTextNumber(string textNumber, int sourceBase)
         {
 
@@ -106,11 +119,11 @@ namespace NumberBaseConvertionLibrary
                 numericValueOfTextNumber += currrentSymbolPlaceValue * (int)Math.Pow((double)sourceBase, currentBaseMultiplier);
                 currentBaseMultiplier++;
             }
-            
+
             return numericValueOfTextNumber;
 
-        }      
-        
+        }
+
 
         public static string TextNumberFromNumberValue(int numericValue, int targetBase)
         {
@@ -132,7 +145,7 @@ namespace NumberBaseConvertionLibrary
 
             if (targetBase == 1)
             {
-                textNumber  = new StringBuilder(numericValue + 1);
+                textNumber = new StringBuilder(numericValue + 1);
                 for (var i = 0; i < numericValue + 1; i++)
                 {
                     textNumber.Append('0');
@@ -164,10 +177,10 @@ namespace NumberBaseConvertionLibrary
             } while (currrentNumericValue > 0);
 
             textNumber = new StringBuilder(textNumberReverted.Length);
-            
-            for (var i = textNumberReverted.Length - 1; i > -1;  i-- )
+
+            for (var i = textNumberReverted.Length - 1; i > -1; i--)
             {
-                textNumber.Append(textNumberReverted[i]);    
+                textNumber.Append(textNumberReverted[i]);
             }
 
 
