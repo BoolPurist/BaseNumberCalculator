@@ -8,4 +8,4 @@ Example for such string "A4" with base 16 as Hexadecimal.
 * text number: string as that consists of number and letters from a-z or A-Z.
 Example: "A4", "28" und "ab" a text numbers.
 
-* numeric value: it refers to an integer value which as number has a base of 10 of course. 
+* numeric value: it refers to an integer value which as a number has a base of 10 of course. 

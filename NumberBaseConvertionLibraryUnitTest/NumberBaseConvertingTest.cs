@@ -34,7 +34,7 @@ namespace NumberBaseConvertionLibraryUnitTest
         [InlineData("Z", 36, 35)]
         public static void NumberValueFromTextNumber_ShouldConvertTextNumberToNumericValueRight(string textNumber, int sourceBase, int expected)
             => Assert.Equal(expected, NumberBaseConverting.NumberValueFromTextNumber(textNumber, sourceBase));
-        
+                
         [Theory]
         [InlineData("/*", 1)]
         [InlineData("2-5", 6)]
