@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using NumberBaseConversionLibrary;
 
 namespace GUINumberBaseCalculator
-{
+{ 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -25,45 +25,45 @@ namespace GUINumberBaseCalculator
         {
             InitializeComponent();
         }
-
+          
         private void Button_NumberConvert_Click(object sender, RoutedEventArgs e)
         {            
-            string inputNumberText = numberInputTextBox.Text.Trim();
-            string sourceBaseText = numberSourceBaseTextBox.Text.Trim();
-            string targetBaseText = numberTargetBaseTextBox.Text.Trim();
-            TextBox resultTextBlock = numberResultTextBlock;
+            bool validInput;
+            
+            numberResultTextBlock.Text = this.GetConvertedTextNumberFromBaseTextNumber(
+                numberInputTextBox.Text,
+                numberSourceBaseTextBox.Text, 
+                numberTargetBaseTextBox.Text, 
+                out validInput
+                );
 
-            SolidColorBrush errorColor = Brushes.Red;
+            numberResultTextBlock.Foreground = validInput ? Brushes.Green : Brushes.Red;
+        }
+
+        private string GetConvertedTextNumberFromBaseTextNumber(string inputNumberText, string sourceBaseText, string targetBaseText, out bool validInput)
+        {
+            
+            validInput = false;
             if (inputNumberText == String.Empty)
-            {
-                resultTextBlock.Text = "Enter a number to be converted !";
-                resultTextBlock.Foreground = errorColor;
-                return;
+            {                
+                return "Enter a number to be converted !";
             }
-            else if (sourceBaseText == String.Empty)                
-            {
-                resultTextBlock.Text = "Enter a number as source base for the number to be converted !";
-                resultTextBlock.Foreground = errorColor;
-                return;
+            else if (sourceBaseText == String.Empty)
+            {                
+                return "Enter a number as source base for the number to be converted !";
             }
             else if (targetBaseText == String.Empty)
-            {
-                resultTextBlock.Text = "Enter number as target base for the number to be converted !";
-                resultTextBlock.Foreground = errorColor;
-                return;
+            {                
+                return "Enter number as target base for the number to be converted !";
             }
 
             if (this.IsOnlyDigits(sourceBaseText) == false)
-            {
-                resultTextBlock.Text = "Number as source base must be only digits !";
-                resultTextBlock.Foreground = errorColor;
-                return;
+            {                
+                return "Number as source base must be only digits !";
             }
             else if (this.IsOnlyDigits(targetBaseText) == false)
-            {
-                resultTextBlock.Text = "Number as target base must be only digits !";
-                resultTextBlock.Foreground = errorColor;
-                return;
+            {                
+                return "Number as target base must be only digits !";
             }
 
 
@@ -71,16 +71,12 @@ namespace GUINumberBaseCalculator
             int targetBase;
 
             if (Int32.TryParse(sourceBaseText, out sourceBase) == false)
-            {
-                resultTextBlock.Text = "The number for the source base must be only digits !";
-                resultTextBlock.Foreground = errorColor;
-                return;
+            {                
+                return "The number for the source base must be only digits !";
             }
             if (Int32.TryParse(targetBaseText, out targetBase) == false)
-            {
-                resultTextBlock.Text = "The number for the target base must be only digits !";
-                resultTextBlock.Foreground = errorColor;
-                return;
+            {                
+                return "The number for the target base must be only digits !";
             }
 
             int numericValue;
@@ -89,36 +85,30 @@ namespace GUINumberBaseCalculator
                 numericValue = NumberBaseConverting.NumberValueFromTextNumber(inputNumberText, sourceBase);
 
                 if (numericValue == -1)
-                {
-                    resultTextBlock.Text = $"source base \"{sourceBase}\" is not high enough for the input text number !";
-                    resultTextBlock.Foreground = errorColor;
-                    return;
-
+                {                    
+                    return $"source base \"{sourceBase}\" is not high enough for the input text number !";
                 }
             }
-            catch (ArgumentOutOfRangeException exception)
-            {
-                resultTextBlock.Text = $"The number for source base \"{sourceBase}\" is not greater than zero!";
-                resultTextBlock.Foreground = errorColor;
-                return;
+            catch (ArgumentOutOfRangeException)
+            {                
+                return $"The number for source base \"{sourceBase}\" is not greater than zero!";
             }
-            catch (ArgumentException exception)
-            {
-                resultTextBlock.Text = $"The input text number \"{inputNumberText}\" is has not valid symbols !";
-                resultTextBlock.Foreground = errorColor;
-                return;
-            }            
+            catch (ArgumentException)
+            {                
+                return $"The input text number \"{inputNumberText}\" is has not valid symbols !";
+            }
 
             try
             {
-                resultTextBlock.Text = NumberBaseConverting.TextNumberFromNumberValue(numericValue, targetBase);
-                resultTextBlock.Foreground = Brushes.Green;
-            } catch (ArgumentOutOfRangeException exception)
-            {
-                resultTextBlock.Text = $"The number for target base \"{targetBase}\" is not greater than zero !";
-                resultTextBlock.Foreground = errorColor;
-                return;
+                string result = NumberBaseConverting.TextNumberFromNumberValue(numericValue, targetBase);
+                validInput = true;
+                return result;
             }
+            catch (ArgumentOutOfRangeException)
+            {                
+                return $"The number for target base \"{targetBase}\" is not greater than zero !";
+            }
+
         }
 
         private bool IsOnlyDigits(string digitText)
