@@ -2,6 +2,10 @@
 .vscode/
 .vs/
 
+# powershell scripts
+
+*.ps1
+
 # build resources
 [Bb]in/
 [Oo]bj/
