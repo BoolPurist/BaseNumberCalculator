@@ -46,18 +46,17 @@
             </exception>
         </member>
         <member name="M:NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue(System.Int32,System.Int32)">
-            <summary> Converts an numeric value into a text number <paramref name="targetBase" /> </summary>
+            <summary> Converts an numeric value into a text number <paramref name = "targetBase" /> </summary>
             <param name="targetBase"> The base for the new text number </param>
             <param name="numericValue"> 
             numeric value as base for the text number. 
-            It is converted to a text number with <paramref name="targetBase" /> as a base. 
+            It is converted to a text number with <paramref name = "targetBase" /> as a base. 
             </param>
-            <returns> text number which hat the base <paramref name="targetBase" /> </returns>
+            <returns> text number which hat the base <paramref name = "targetBase" /> </returns>
             <exception cref="T:System.ArgumentOutOfRangeException"> 
-            Occurs if <paramref name="targetBase" /> is equal to or smaller than zero.
-            Occurs if the parameter is bigger than the maximum base, <see cref="P:NumberBaseConversionLibrary.NumberBaseConverting.MaxBase" />.
+            Occurs if <paramref name = "targetBase" /> is equal to or smaller than zero.
+            Occurs if the parameter is bigger than the maximum base, <see cref = "P:NumberBaseConversionLibrary.NumberBaseConverting.MaxBase" />.
             </exception>
-            <!-- Failed to insert some or all of included XML --><include file="docs.xml" path="docs/members/member[@name=&quot;M:NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue(System.Int32,System.Int32)&quot;]/*" />
         </member>
     </members>
 </doc>

@@ -27,7 +27,7 @@ namespace NumberBaseConversionLibrary
         /// <summary> Determines the possible highest base for conversion numbers </summary>
         /// <value> Get-Accessors on the readonly field maxBase with the value 36 currently</value>
         public static int MaxBase => maxBase;
-        /// <summary> Gets the numeric value from a text number. </summary>
+        /// <summary> Gets the numeric value from a number as text. </summary>
         /// <param name="textNumber"> text number which is converted to a numeric value</param>
         /// <param name="sourceBase"> Base which the text number is based on. </param>
         /// <returns> 
@@ -45,7 +45,8 @@ namespace NumberBaseConversionLibrary
         /// Occurs if the <paramref name = "textNumber" /> is an empty string or has no char which is from 0-9, a-z or A-Z.
         /// </exception>
         public static int NumberValueFromTextNumber(string textNumber, int sourceBase)
-        {           
+        {
+            // if a char which the parameter sourceBase is not high enough.
             if (NumberBaseConverting.IsValidTextNumberWithBase(textNumber, sourceBase) == false)
             {
                 return -1;
@@ -55,7 +56,7 @@ namespace NumberBaseConversionLibrary
                 return textNumber.Length - 1;
             }
 
-            int numericValueOfTextNumber = 0;
+            int numericValueOfTextNumber = 0;            
             double currentBaseMultiplier = 0.0;
 
             for (var i = textNumber.Length - 1; i > -1; i--)
@@ -79,10 +80,11 @@ namespace NumberBaseConversionLibrary
 
         }
 
-        // Tells if parameter "textNumber" is a valid string and if parameter sourceBase is a valid integer for conversion.
-        // Returns false if the parameter "sourceBase " is too small for the conversion of the parameter "textNumber"
-        // Example: 10 as base is not valid for "A4" because 'A' needs at least a base of 11.
-        // For any other reason for invalid parameters an exception is thrown. Caller of this routine comment on the exceptions. 
+        // Checks if "textNumber" has only valid chars and the base is in valid range.
+        // If both parameters are valid, it returns true.
+        // If parameter "sourceBase" is not high enough for at least one char, it returns false.
+        // Example would be "textNumber" is "A4" and "sourceBase" with 10. A as a char requires at least a base of 11.
+        // This method also throws the exceptions for the method "NumberValueFromTextNumber". See the xml comment return there.
         private static bool IsValidTextNumberWithBase(string textNumber, int sourceBase)
         {
             if (textNumber == null)
@@ -121,10 +123,10 @@ namespace NumberBaseConversionLibrary
                 else if (Char.IsLetter(symbol))
                 {
 
-                    // Removes case sensitivity for letters , so a-z are also valid.
+                    // Removes case sensitivity for letters so a-z is also valid.
                     char upperLetter = Char.ToUpper(symbol);
 
-                    // For numbers of higher base than 10. (A-Z).
+                    // For numbers of higher base than 10 only A-Z are accepted.
                     if (upperLetter >= 'A' && upperLetter <= 'Z')
                     {
                         currentNumericCharValue = (int)(upperLetter - 'A') + 10;
@@ -143,7 +145,7 @@ namespace NumberBaseConversionLibrary
                 else
                 {
                     string paramName = nameof(textNumber);
-                    throw new ArgumentException($"{paramName} has a not valid symbol", paramName);
+                    throw new ArgumentException($"{paramName} has a unvalid symbol", paramName);
                 }
 
             }
@@ -151,17 +153,18 @@ namespace NumberBaseConversionLibrary
             return true;
         }
 
-        /// <summary> Converts a numeric value with base <paramref name = "targetBase" /> into a text number </summary>
+        /// <summary> Converts an numeric value into a text number <paramref name = "targetBase" /> </summary>
         /// <param name="targetBase"> The base for the new text number </param>
         /// <param name="numericValue"> 
         /// numeric value as base for the text number. 
         /// It is converted to a text number with <paramref name = "targetBase" /> as a base. 
         /// </param>
-        /// <returns> text number which has the base <paramref name = "targetBase" /> </returns>
+        /// <returns> text number which hat the base <paramref name = "targetBase" /> </returns>
         /// <exception cref="System.ArgumentOutOfRangeException"> 
         /// Occurs if <paramref name = "targetBase" /> is equal to or smaller than zero.
         /// Occurs if the parameter is bigger than the maximum base, <see cref = "MaxBase" />.
         /// </exception>
+        /// <include file='docs.xml' path='docs/members/member[@name="M:NumberBaseConversionLibrary.NumberBaseConverting.TextNumberFromNumberValue(System.Int32,System.Int32)"]/*'/>
         public static string TextNumberFromNumberValue(int numericValue, int targetBase)
         {
             var textNumberReverted = new StringBuilder();
@@ -187,33 +190,30 @@ namespace NumberBaseConversionLibrary
             }
             do
             {
-                // Determining the next char.
                 int currentNumberValue = currrentNumericValue % targetBase;
                 char currentChar;
 
                 if (currentNumberValue >= 0 && currentNumberValue < 10)
                 {
                     currentChar = (char)('0' + currentNumberValue);
-                }                
+                }
                 else
                 {
                     currentChar = (char)('A' + (currentNumberValue - 10));
                 }
 
                 textNumberReverted.Append(currentChar);
-                // Dividing down the number for next char to be determined.
                 currrentNumericValue /= targetBase;
 
             } while (currrentNumericValue > 0);
 
             textNumber = new StringBuilder(textNumberReverted.Length);
 
-            // Chars are written from left to right here but numbers are written in the opposite way.
-            // For this reason it needs to reverted.
             for (var i = textNumberReverted.Length - 1; i > -1; i--)
             {
                 textNumber.Append(textNumberReverted[i]);
             }
+
 
             return textNumber.ToString();
         }
