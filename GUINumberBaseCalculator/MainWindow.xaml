@@ -5,32 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUINumberBaseCalculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="480">
+        Title="MainWindow" Height="640" Width="480">
     <Window.Resources>
 
-        <Style x:Key="mainTextBaseStyle">
-            <Setter Property="Control.Margin" Value="5,5"/>
-            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Style TargetType="TextBlock">
+            <Setter Property="Control.FontSize" Value="30"></Setter>
         </Style>
-        <Style  TargetType="TextBlock" BasedOn="{StaticResource mainTextBaseStyle}"  x:Key="mainTextLabelStyle">
+        <Style  TargetType="TextBlock"  x:Key="mainTextLabelStyle" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+            <Setter Property="Control.Margin" Value="5,5"/>
             <Setter Property="Grid.ColumnSpan" Value="2"/>
         </Style>
-        <Style TargetType="TextBox" BasedOn="{StaticResource mainTextBaseStyle}"  x:Key="resultTextBoxStyle">
-            <Setter Property="Grid.ColumnSpan" Value="2"></Setter>
+        <Style TargetType="TextBlock" x:Key="numberBaseTextStyle" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="Margin" Value="10,10,10,2"/>
         </Style>
-        
-        <Style TargetType="TextBox" x:Key="numberBaseInputBoxBStyle">
+
+        <Style TargetType="TextBox">
+            <Setter Property="Control.FontSize" Value="20"/>
+        </Style>
+
+        <Style TargetType="TextBox"  x:Key="resultTextBoxStyle" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Grid.ColumnSpan" Value="2"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="TextWrapping" Value="NoWrap" />
+            <Setter Property="Control.FontSize" Value="30"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="numberBaseInputBoxBStyle" BasedOn="{StaticResource {x:Type TextBox}}">
             <Setter Property="Margin" Value="10,2,10,5"/>
             <Setter Property="MaxLength" Value="2"/>
         </Style>
-        <Style TargetType="TextBlock" x:Key="numberBaseTextStyle">
-            <Setter Property="Margin" Value="10,10,10,2"/>
-        </Style>
+
         
         
     </Window.Resources>
 
-    <Grid>
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
@@ -50,7 +61,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
-            
+
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
 
@@ -70,26 +81,10 @@
         <TextBox x:Name="numberSourceBaseTextBox" Style="{StaticResource numberBaseInputBoxBStyle}" Grid.Row="4" Grid.Column="1"/>
         <TextBox x:Name="numberTargetBaseTextBox" Style="{StaticResource numberBaseInputBoxBStyle}" Grid.Row="4" Grid.Column="2"/>
 
-        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,5" Click="Button_NumberConvert_Click">
+        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,20" FontSize="30" Click="Button_NumberConvert_Click">
             Convert
         </Button>
 
-        <TextBox x:Name="numberResultTextBlock" Grid.Row="6" Grid.Column="1"  Text="Result of Conversion">
-            <TextBox.Style>
-                <Style TargetType="TextBox" BasedOn="{StaticResource resultTextBoxStyle}">
-                    <Setter Property="IsReadOnly" Value="True" />
-                    <Setter Property="BorderThickness" Value="0" />
-                    <Setter Property="TextWrapping" Value="NoWrap" />
-                </Style>
-            </TextBox.Style>
-        </TextBox>
-
-
-        
-
-
+        <TextBox Style="{StaticResource resultTextBoxStyle}" x:Name="numberResultTextBlock" Grid.Row="6" Grid.Column="1"  Text="Result of Conversion"/>
     </Grid>
-
-
-    
 </Window>
