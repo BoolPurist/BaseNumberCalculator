@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUINumberBaseCalculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="480">
+        Title="Number Base Calculator" Height="640" Width="480">
     <Window.Resources>
 
         <Style TargetType="TextBlock">
